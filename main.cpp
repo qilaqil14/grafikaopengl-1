@@ -22,7 +22,7 @@ void display() { // d
     
     if (kanan) {
         x++;
-        glTranslatef(1.0, 0.0, 0.0); //tidak di pakai
+        glTranslatef(1.0, 0.0, 0.0);
         if (x > 600) {
             kanan = false;
         }
@@ -36,10 +36,10 @@ void display() { // d
 
     glColor3f(1.0, 0.0, 0.0);
     glBegin(GL_QUADS);
-        glVertex2f(x, 200.0);      // x horisontal
-        glVertex2f(x, 400.0);
-        glVertex2f(x + 200.0, 400.0);
-        glVertex2f(x + 200.0, 200.0);
+    glVertex2f(200.0, 200.0);
+    glVertex2f(200.0, 400.0);
+    glVertex2f(400.0, 400.0);
+    glVertex2f(400.0, 200.0);
     glEnd();
 
     glutSwapBuffers();
@@ -53,7 +53,7 @@ int main(int argc, char** argv) { // void ganti int
     glutCreateWindow("Percobaan Pertama Saya");
     
     init();
-    glutDisplayFunc(display); //d ganti display
+    glutDisplayFunc(display);
     // glutIdleFunc(idle); 
     glutTimerFunc(0, timer, 0);
     glutMainLoop();
